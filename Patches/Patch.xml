@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- Odyssey only, no XmlExtensions -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Drug_Psilocap"]/ingestible/outcomeDoers/li[@Class="IngestionOutcomeDoer_Psilocap"]/chanceInspiration</xpath>
+		<value>
+			<chanceInspiration>0.06</chanceInspiration>
+		</value>
+
+	</Operation>
+	
+	<!-- Configurable block: only parsed/applied if XML Extensions is loaded -->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationSequence" MayRequire="imranfish.xmlextensions">
+				<operations>
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.PsilocapInspTweak</modId>
+						<key>Psilocap_Inspiration_Chance</key>
+						<defaultValue>6</defaultValue>
+
+						<apply>
+							<!-- Set raw numeric value -->
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="Drug_Psilocap"]/ingestible/outcomeDoers/li[@Class="IngestionOutcomeDoer_Psilocap"]/chanceInspiration</xpath>
+								<value>
+									<chanceInspiration>{Psilocap_Inspiration_Chance}</chanceInspiration>
+								</value>
+							</li>
+
+							<!-- Convert to % -->
+							<li Class="XmlExtensions.PatchOperationMath">
+								<xpath>/Defs/ThingDef[defName="Drug_Psilocap"]/ingestible/outcomeDoers/li[@Class="IngestionOutcomeDoer_Psilocap"]/chanceInspiration</xpath>
+								<value>100</value>
+								<operation>/</operation>
+								<fromXml>false</fromXml>
+							</li>
+						</apply>
+					</li>
+				</operations>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

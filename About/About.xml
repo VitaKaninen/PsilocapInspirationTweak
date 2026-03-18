@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Psilocap Inspiration Tweak</name>
+  <author>VitaKaninen</author>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>Vita.PsilocapInspTweak</packageId>
+<description>
+This is a small patch that changes the inspiration chance of Psilocap from 2% to 6%.  
+
+If [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2574315206]XML Extensions[/url] is used, there will be mod settings where you can adjust this to whatever you like.</description>
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Odyssey</packageId>
+			<displayName>Odyssey</displayName>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.Rimworld.Odyssey</li>
+		<li>imranfish.xmlextensions</li>
+	</loadAfter>
+</ModMetaData>

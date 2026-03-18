@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<XmlExtensions.SettingsMenuDef MayRequire="imranfish.xmlextensions">
+		<modId>Vita.PsilocapInspTweak</modId>
+		<label>Psilocap Inspiration Tweak Settings</label>
+
+		<settings>
+			<li Class="XmlExtensions.Setting.Gap">
+				<spacing>250</spacing>
+			</li>
+			<li Class="XmlExtensions.Setting.Slider">
+				<key>Psilocap_Inspiration_Chance</key>
+				<label>Psilocap inspiration chance: {key}%</label>
+				<tooltip>Chance for psilocaps to immediately inspire the user.</tooltip>
+				<padLeft>75</padLeft>
+				<padRight>75</padRight>
+				<defaultValue>6</defaultValue>
+				<min>0</min>
+				<max>100</max>
+				<decimals>0</decimals>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<font>Tiny</font>
+				<padLeft>75</padLeft>
+				<text>(Vanilla = 2%)</text>
+			</li>
+			<li Class="XmlExtensions.Setting.Gap">
+				<spacing>80</spacing>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<font>Small</font>
+				<text>Game must be restarted for the change to take effect!</text>
+				<anchor>Middle</anchor>
+				<color>255,0,0</color>
+			</li>
+
+			<li Class="XmlExtensions.Setting.ResetSettings">
+				<message>Are you sure you want to reset the setting?</message>
+				<padRight>700</padRight>
+			</li>
+		</settings>
+	</XmlExtensions.SettingsMenuDef>
+
+</Defs>
